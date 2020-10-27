@@ -1,0 +1,82 @@
+﻿@page
+@model OptimalHealthApp.doctorProfilePageModel
+
+@{
+    ViewData["Title"] = "doctorProfilePage";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid rounded bg-info">
+    <h2 class="text-center">User details for @User.Identity.Name</h2>
+</div>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Doctor.f_name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Doctor.f_name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Doctor.l_name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Doctor.l_name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Doctor.Telephone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Doctor.Telephone)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Doctor.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Doctor.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Doctor.H_ID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Doctor.H_ID)
+        </dd>
+    </dl>
+</div>
+<hr />
+<div class="container-fluid rounded bg-info">
+    <h2 class="text-center">My patient appointments</h2>
+</div>
+<dl class="row">
+    <dt class="col-md-6">
+        <h5>Patient ID</h5>
+    </dt>
+    <dd class="col-md-6">
+        @Html.DisplayFor(model => model.Appointment.U_ID)
+    </dd>
+    <dt class="col-md-6">
+        <h5>Time of appointment</h5>
+    </dt>
+    <dd class="col-md-6">
+        @Html.DisplayFor(model => model.Appointment.Time_of_appintment)
+    </dd>
+    <dt class="col-md-6">
+        <h5>Date of appointment</h5>
+    </dt>
+    <dd class="col-md-6">
+        @Html.DisplayFor(model => model.Appointment.Date_of_appointment)
+    </dd>
+    <dt class="col-md-6">
+        <h5>Patients notes to doctor</h5>
+    </dt>
+    <dd class="col-md-6">
+        @Html.DisplayFor(model => model.Appointment.Patient_notes)
+    </dd>
+    <dt class="col-md-6">
+        <h5>Doctors notes to patient</h5>
+    </dt>
+    <dd class="col-md-6">
+        @Html.DisplayFor(model => model.Appointment.Doctor_notes)
+    </dd>
+</dl>

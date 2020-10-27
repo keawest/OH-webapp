@@ -1,0 +1,106 @@
+﻿@page
+@model OptimalHealthApp.FAQModel
+@{
+    ViewData["Title"] = "FAQ";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid rounded bg-info">
+    <h1 class="text-center">FAQ</h1>
+</div>
+<hr/>
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    Click on a frequently asked question to read the answer.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="accordion" id="faq">
+    <div class="card bg-dark">
+        <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+                <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    First question
+                </button>
+            </h2>
+        </div>
+
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#faq">
+            <div class="card-body bg-success text-white">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo, massa vitae dapibus finibus, nibh felis hendrerit dui, et consequat orci lacus nec mi. Cras eleifend vehicula risus quis lobortis. Nullam mollis imperdiet dictum. Nam id risus et velit feugiat congue id dignissim ligula. Integer tincidunt eros vitae sagittis imperdiet. Fusce pulvinar, odio vitae condimentum placerat, odio ipsum ultricies lectus, ac luctus magna metus id orci. Mauris condimentum molestie mi a tincidunt.
+            </div>
+        </div>
+    </div>
+    <div class="card bg-dark">
+        <div class="card-header" id="headingTwo">
+            <h2 class="mb-0">
+                <button class="btn btn-info collapsed btn-block" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Second question
+                </button>
+            </h2>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faq">
+            <div class="card-body bg-success text-white">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo, massa vitae dapibus finibus, nibh felis hendrerit dui, et consequat orci lacus nec mi. Cras eleifend vehicula risus quis lobortis. Nullam mollis imperdiet dictum. Nam id risus et velit feugiat congue id dignissim ligula. Integer tincidunt eros vitae sagittis imperdiet. Fusce pulvinar, odio vitae condimentum placerat, odio ipsum ultricies lectus, ac luctus magna metus id orci. Mauris condimentum molestie mi a tincidunt.
+            </div>
+        </div>
+    </div>
+    <div class="card bg-dark">
+        <div class="card-header" id="headingThree">
+            <h2 class="mb-0">
+                <button class="btn btn-info collapsed btn-block" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Third question
+                </button>
+            </h2>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faq">
+            <div class="card-body bg-success text-white">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo, massa vitae dapibus finibus, nibh felis hendrerit dui, et consequat orci lacus nec mi. Cras eleifend vehicula risus quis lobortis. Nullam mollis imperdiet dictum. Nam id risus et velit feugiat congue id dignissim ligula. Integer tincidunt eros vitae sagittis imperdiet. Fusce pulvinar, odio vitae condimentum placerat, odio ipsum ultricies lectus, ac luctus magna metus id orci. Mauris condimentum molestie mi a tincidunt.
+            </div>
+        </div>
+    </div>
+    <div class="card bg-dark">
+        <div class="card-header" id="headingFour">
+            <h2 class="mb-0">
+                <button class="btn btn-info btn-block" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                    Fourth question
+                </button>
+            </h2>
+        </div>
+
+        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#faq">
+            <div class="card-body bg-success text-white">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo, massa vitae dapibus finibus, nibh felis hendrerit dui, et consequat orci lacus nec mi. Cras eleifend vehicula risus quis lobortis. Nullam mollis imperdiet dictum. Nam id risus et velit feugiat congue id dignissim ligula. Integer tincidunt eros vitae sagittis imperdiet. Fusce pulvinar, odio vitae condimentum placerat, odio ipsum ultricies lectus, ac luctus magna metus id orci. Mauris condimentum molestie mi a tincidunt.
+            </div>
+        </div>
+    </div>
+    <div class="card bg-dark">
+        <div class="card-header" id="headingFive">
+            <h2 class="mb-0">
+                <button class="btn btn-info collapsed btn-block" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    Fifth question
+                </button>
+            </h2>
+        </div>
+        <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#faq">
+            <div class="card-body bg-success text-white">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo, massa vitae dapibus finibus, nibh felis hendrerit dui, et consequat orci lacus nec mi. Cras eleifend vehicula risus quis lobortis. Nullam mollis imperdiet dictum. Nam id risus et velit feugiat congue id dignissim ligula. Integer tincidunt eros vitae sagittis imperdiet. Fusce pulvinar, odio vitae condimentum placerat, odio ipsum ultricies lectus, ac luctus magna metus id orci. Mauris condimentum molestie mi a tincidunt.
+            </div>
+        </div>
+    </div>
+    <div class="card bg-dark">
+        <div class="card-header" id="headingSix">
+            <h2 class="mb-0">
+                <button class="btn btn-info collapsed btn-block" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                    Sixth question
+                </button>
+            </h2>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faq">
+            <div class="card-body bg-success text-white">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo, massa vitae dapibus finibus, nibh felis hendrerit dui, et consequat orci lacus nec mi. Cras eleifend vehicula risus quis lobortis. Nullam mollis imperdiet dictum. Nam id risus et velit feugiat congue id dignissim ligula. Integer tincidunt eros vitae sagittis imperdiet. Fusce pulvinar, odio vitae condimentum placerat, odio ipsum ultricies lectus, ac luctus magna metus id orci. Mauris condimentum molestie mi a tincidunt.
+            </div>
+        </div>
+    </div>
+</div>
+<hr />

@@ -1,0 +1,118 @@
+﻿@page
+@model OptimalHealthApp.PatientProfilePageModel
+
+@{
+    ViewData["Title"] = "patientProfilePage";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+    <div class="container-fluid rounded bg-info">
+        <h2 class="text-center">User details for @User.Identity.Name</h2>
+    </div>
+    <div>
+        <hr />
+        <div class="container text-md-center" style="max-width: 35rem;">
+            <div class="card card-body mx-auto bg-dark text-white">
+                <dl class="row">
+                    <dt class="col-md-6">
+                        @Html.DisplayNameFor(model => model.UserTable.f_name)
+                    </dt>
+                    <dd class="col-md-6">
+                        @Html.DisplayFor(model => model.UserTable.f_name)
+                    </dd>
+                    <dt class="col-md-6">
+                        @Html.DisplayNameFor(model => model.UserTable.l_name)
+                    </dt>
+                    <dd class="col-md-6">
+                        @Html.DisplayFor(model => model.UserTable.l_name)
+                    </dd>
+                    <dt class="col-md-6">
+                        @Html.DisplayNameFor(model => model.UserTable.Email)
+                    </dt>
+                    <dd class="col-md-6">
+                        @Html.DisplayFor(model => model.UserTable.Email)
+                    </dd>
+                    <dt class="col-md-6">
+                        @Html.DisplayNameFor(model => model.UserTable.Telephone_1)
+                    </dt>
+                    <dd class="col-md-6">
+                        @Html.DisplayFor(model => model.UserTable.Telephone_1)
+                    </dd>
+                    <dt class="col-md-6">
+                        @Html.DisplayNameFor(model => model.UserTable.Telephone_2)
+                    </dt>
+                    <dd class="col-md-6">
+                        @Html.DisplayFor(model => model.UserTable.Telephone_2)
+                    </dd>
+                    <dt class="col-md-6">
+                        @Html.DisplayNameFor(model => model.UserTable.Adress)
+                    </dt>
+                    <dd class="col-md-6">
+                        @Html.DisplayFor(model => model.UserTable.Adress)
+                    </dd>
+                    <dt class="col-md-6">
+                        @Html.DisplayNameFor(model => model.UserTable.Zipcode)
+                    </dt>
+                    <dd class="col-md-6">
+                        @Html.DisplayFor(model => model.UserTable.Zipcode)
+                    </dd>
+                    <dt class="col-md-6">
+                        @Html.DisplayNameFor(model => model.UserTable.City) 
+                    </dt>
+                    <dd class="col-md-6">
+                        @Html.DisplayFor(model => model.UserTable.City)
+                    </dd>
+                    <dt class="col-md-6">
+                        @Html.DisplayNameFor(model => model.UserTable.County)
+                    </dt>
+                    <dd class="col-md-6">
+                        @Html.DisplayFor(model => model.UserTable.County)
+                    </dd>
+                    <dt class="col-md-6">
+                        @Html.DisplayNameFor(model => model.UserTable.Nationality)
+                    </dt>
+                    <dd class="col-md-6">
+                        @Html.DisplayFor(model => model.UserTable.Nationality)
+                    </dd>
+                </dl>
+                <div>
+                    <a href="/PatientPages/EditUserProfile" class="btn btn-primary">Edit information</a>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="container-fluid rounded bg-info">
+            <h2 class="text-center">My appointments</h2>
+        </div>
+        <dl class="row">
+            <dt class="col-md-6">
+                <h5>Doctor ID</h5>
+            </dt>
+            <dd class="col-md-6">
+                @Html.DisplayFor(model => model.Appointment.D_ID)
+            </dd>
+            <dt class="col-md-6">
+                <h5>Time of appointment</h5>
+            </dt>
+            <dd class="col-md-6">
+                @Html.DisplayFor(model => model.Appointment.Time_of_appintment)
+            </dd>
+            <dt class="col-md-6">
+                <h5>Date of appointment</h5>
+            </dt>
+            <dd class="col-md-6">
+                @Html.DisplayFor(model => model.Appointment.Date_of_appointment)
+            </dd>
+            <dt class="col-md-6">
+                <h5>Patients notes to doctor</h5>
+            </dt>
+            <dd class="col-md-6">
+                @Html.DisplayFor(model => model.Appointment.Patient_notes)
+            </dd>
+            <dt class="col-md-6">
+                <h5>Doctors notes to patient</h5>
+            </dt>
+            <dd class="col-md-6">
+                @Html.DisplayFor(model => model.Appointment.Doctor_notes)
+            </dd>
+        </dl>
+    </div>

@@ -1,0 +1,57 @@
+﻿@page
+@model OptimalHealthApp.Patient_RecordModel
+
+@{
+    ViewData["Title"] = "Patient_Record";
+}
+    <body>
+        <div class="container-fluid rounded bg-info">
+            <h1 class="text-center">Patient_Record</h1>
+        </div>
+        <hr />
+        <div class="container-fluid">
+            <div class="Listebox">
+                <div class="Searchbox">
+                    <form asp-page="./Patient_Record" method="get">
+                        <div class="form-row">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <input type="text" class="form-control col-12" name="SearchString" value="@Model.CurrentFilter" placeholder="Find by name:" />
+                                    </div>
+                                    <div class="col-auto">
+                                        <input type="submit" value="Search" class="btn btn-primary" />
+                                    </div>
+                                </div>
+                        </div>
+                    </form>
+                    <br/>
+                </div>
+                </div>
+                <table class="table table-sm table-bordered table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>
+                                Doctor notes
+                            </th>
+                            <th>
+                                Patient ID
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Appointment)
+                        {
+                            <tr class="table-secondary">
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Doctor_notes)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.U_ID)
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        <hr />
+    </body>

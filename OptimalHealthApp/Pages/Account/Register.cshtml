@@ -1,0 +1,96 @@
+﻿@page
+@model OptimalHealthApp.RegisterModel
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+        <div class="row">
+            <div class="card card-body align-content-center bg-dark">
+                <form method="post">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <h1 class="text-white">Register new user</h1>
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <input required asp-for="UserTable.f_name" class="form-control" placeholder="First name" name="f_name" data-toggle="tooltip" title="Enter your first name">
+                            <span asp-validation-for="UserTable.f_name" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col">
+                            <input required asp-for="UserTable.l_name" class="form-control" placeholder="Last name" name="l_name" data-toggle="tooltip" title="Enter your last name">
+                            <span asp-validation-for="UserTable.l_name" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <input required asp-for="UserTable.U_Password" class="form-control" placeholder="Password" name="U_Password" data-toggle="tooltip" title="Choose a password, minimum 8 characters long">
+                            <span asp-validation-for="UserTable.U_Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col">
+                            <input required asp-for="UserTable.Email" class="form-control" placeholder="Email" name="Email" data-toggle="tooltip" title="Enter your full emailadress">
+                            <span asp-validation-for="UserTable.Email" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <input required asp-for="UserTable.Telephone_1" class="form-control" placeholder="Telephone 1" name="Telephone_1" data-toggle="tooltip" title="Enter your phonenumber, 8 digits">
+                            <span asp-validation-for="UserTable.Telephone_1" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col">
+                            <input asp-for="UserTable.Telephone_2" class="form-control" placeholder="Telephone 2" name="Telephone_2" data-toggle="tooltip" title="If you have more then one phonenumber">
+                            <span asp-validation-for="UserTable.Telephone_2" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input required asp-for="UserTable.Adress" class="form-control" placeholder="Adress" name="Adress" data-toggle="tooltip" title="Enter your postal adress">
+                        <span asp-validation-for="UserTable.Adress" class="text-danger"></span>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <input required asp-for="UserTable.Nationality" class="form-control" placeholder="Nationality" name="Nationality" data-toggle=" tooltip" title="Enter your nationality">
+                            <span asp-validation-for="UserTable.Nationality" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <select required asp-for="UserTable.County" class="form-control" name="County" asp-items="@Model.CountyOptions" data-toggle="tooltip" title="Choose your county">
+                                <option value="" disabled selected>
+                                    County
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group col">
+                            <select required asp-for="UserTable.City" class="form-control" name="City" asp-items="@Model.CityOptions" data-toggle="tooltip" title="Choose your city">
+                                <option value="" disabled selected>
+                                    City
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group col">
+                            <input required asp-for="UserTable.Zipcode" class="form-control" placeholder="Zipcode" name="Zipcode" data-toggle="tooltip" title="Enter your zipcode here">
+                            <span asp-validation-for="UserTable.Zipcode" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <input required asp-for="UserTable.RGP" class="form-control" placeholder="RGP">
+                            <span asp-validation-for="UserTable.RGP" class="text-danger"></span>
+                        </div>
+                    </div>  
+                    <input type="hidden" required asp-for="UserTable.Rolle" class="hide" name="Rolle" value="Patient">
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <button type="submit" class="btn btn-outline-primary font-weight-bold">Register new user</button>
+                        </div>
+                    </div>
+                </form>
+
+                @section Scripts {
+                    <partial name="_ValidationScriptsPartial" />
+                }
+            </div>
+        </div>
+</div>
+<hr />
+
+

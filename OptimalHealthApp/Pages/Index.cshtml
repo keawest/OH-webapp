@@ -1,0 +1,42 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+
+    <div class="card card-body bg-dark">
+        <div class="card text-center mb-3">
+        <div class="card-body">
+            <h5 class="card-title">Welcome to Optimal Health!</h5>
+            <p class="card-text">
+                Time to take control over your healthcare.<br />
+                Login to get started, or if you are new, click the register button to create an account
+            </p>
+            <a href="/Account/Login" class="btn btn-primary">Login</a>
+            <a href="/Account/Register" class="btn btn-primary">Register</a>
+        </div>
+        </div>
+        <div class="row bg-dark">
+            <div class="col-sm-6">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Privacy is important</h5>
+                        <p class="card-text">Learn about how we treat your sensitive information here!</p>
+                        <a href="/Privacy" class="btn btn-primary">Privacy policy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Wondering about something?</h5>
+                        <p class="card-text">Try reading our frequently asked questions!</p>
+                        <a href="/FAQ" class="btn btn-primary">FAQ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />

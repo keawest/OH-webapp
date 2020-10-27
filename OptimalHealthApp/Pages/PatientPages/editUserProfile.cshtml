@@ -1,0 +1,92 @@
+﻿@page
+@model OptimalHealthApp.EditUserProfile
+
+@{
+    ViewData["Title"] = "EditUserProfile";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<div class="container-fluid rounded bg-info">
+    <h1 class="text-center">Edit profile</h1>
+</div>
+<hr />
+<div class="container" style="max-width: 30rem;">
+    <div class="row">
+        <div class="card card-body mx-auto text-white bg-dark">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="UserTable.U_ID" />
+                <h4 class="text-white">Information</h4>
+                <br />
+                <div class="form-row">
+                    <div class="form-group-col-6">
+                        <label asp-for="UserTable.f_name" class="control-label"></label>
+                        <input asp-for="UserTable.f_name" class="form-control" />
+                        <span asp-validation-for="UserTable.f_name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group-col-6">
+                        <label asp-for="UserTable.l_name" class="control-label"></label>
+                        <input asp-for="UserTable.l_name" class="form-control" />
+                        <span asp-validation-for="UserTable.l_name" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group-col-6">
+                        <label asp-for="UserTable.Email" class="control-label"></label>
+                        <input asp-for="UserTable.Email" class="form-control" />
+                        <span asp-validation-for="UserTable.Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group-col-6">
+                        <label asp-for="UserTable.Telephone_1" class="control-label"></label>
+                        <input asp-for="UserTable.Telephone_1" class="form-control" />
+                        <span asp-validation-for="UserTable.Telephone_1" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group-col-6">
+                        <label asp-for="UserTable.Telephone_2" class="control-label"></label>
+                        <input asp-for="UserTable.Telephone_2" class="form-control" />
+                        <span asp-validation-for="UserTable.Telephone_2" class="text-danger"></span>
+                    </div>
+                    <div class="form-group-col-6">
+                        <label asp-for="UserTable.Adress" class="control-label"></label>
+                        <input asp-for="UserTable.Adress" class="form-control" />
+                        <span asp-validation-for="UserTable.Adress" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group-col-6">
+                        <label asp-for="UserTable.Zipcode" class="control-label"></label>
+                        <input asp-for="UserTable.Zipcode" class="form-control" />
+                        <span asp-validation-for="UserTable.Zipcode" class="text-danger"></span>
+                    </div>
+                    <div class="form-group-col-6">
+                        <label asp-for="UserTable.City" class="control-label"></label>
+                        <select asp-for="UserTable.City" class="form-control" name="City" asp-items="@Model.CityOptions" data-toggle="tooltip" title="Choose your city"></select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group-col-6">
+                        <label asp-for="UserTable.County" class="control-label"></label>
+                        <select asp-for="UserTable.County" class="form-control" name="County" asp-items="@Model.CountyOptions" data-toggle="tooltip" title="Choose your county"></select>
+                    </div>
+                    <div class="form-group-col-6">
+                        <label asp-for="UserTable.Nationality" class="control-label"></label>
+                        <input asp-for="UserTable.Nationality" class="form-control" />
+                        <span asp-validation-for="UserTable.Nationality" class="text-danger"></span>
+                    </div>
+                </div>
+                <hr />
+                <div class="form-group">
+                    <input type="submit" value="Save changes" class="btn btn-success" />
+                    <a href="/PatientPages/patientProfilePage" class="btn btn-primary">Back to profile</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section Scripts {
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

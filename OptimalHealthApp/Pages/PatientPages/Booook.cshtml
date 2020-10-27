@@ -1,0 +1,60 @@
+﻿@page
+@model OptimalHealthApp.BooookModel
+
+@{
+    ViewData["Title"] = "Booook";
+}
+
+
+<div class="container-fluid rounded bg-info">
+    <h1 class="text-center">Here you can book appointments with a doctor</h1>
+</div>
+<hr />
+<div class="container" style="max-width: 30rem;">
+    <div class="row">
+        <div class="card card-body mx-auto text-white bg-dark">
+            <form method="post">
+                <div class="row">
+                    <div class="col">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Appointment.D_ID" class="control-label"></label>
+                            <input asp-for="Appointment.D_ID" class="form-control" />
+                            <span asp-validation-for="Appointment.D_ID" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Appointment.U_ID" class="control-label"></label>
+                            <input asp-for="Appointment.U_ID" value="@ViewData["id"]" class="form-control" placeholder="@ViewData["id"]" readonly />
+                            <span asp-validation-for="Appointment.U_ID" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Appointment.Date_of_appointment" class="control-label"></label>
+                            <input type="date" asp-for="Appointment.Date_of_appointment" class="form-control" />
+                            <span asp-validation-for="Appointment.Date_of_appointment" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Appointment.Time_of_appintment" class="control-label"></label>
+                            <input asp-for="Appointment.Time_of_appintment" type="time" min="08:00" max="16:00" step="1800" value="08:00" class="form-control" />
+                            <span asp-validation-for="Appointment.Time_of_appintment" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Appointment.Patient_notes" class="control-label"></label>
+                            <input asp-for="Appointment.Patient_notes" class="form-control" />
+                            <span asp-validation-for="Appointment.Patient_notes" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </div>
+            <hr />
+        </form>
+        </div>
+    </div>
+    <div>
+        <a asp-page="/Index">Back to main page</a>
+    </div>
+</div>
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

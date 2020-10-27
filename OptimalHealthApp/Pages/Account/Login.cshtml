@@ -1,0 +1,56 @@
+﻿@page
+@model OptimalHealthApp.LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+    <div class="container align-content-center">
+        <div class="card card-body align-content-center bg-dark">
+            <div class="row">
+                <div class="col-md-3 col-lg-4"></div>
+                <div class="col-md-6 col-lg-4">
+                    <form method="post">
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <div class="form-group">
+                            <h1 class="text-white">Login</h1>
+                            <input required asp-for="Input.LoginName" class="form-control" placeholder="Email" data-toggle="tooltip" title="Enter your emailadress">
+                            <span asp-validation-for="Input.LoginName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+
+                            <input required asp-for="Input.Password" class="form-control" placeholder="Password" data-toggle="tooltip" title="Enter your password">
+                            <span asp-validation-for="Input.Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="switch" asp-for="Input.RememberMe" />
+                                <label class="custom-control-label text-white" for="switch">Remember me</label>
+                                <span asp-validation-for="Input.RememberMe" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="custom-radio">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-outline-primary font-weight-bold">
+                                        <input class="custom-control-input" asp-for="Input.IsPatient" />Patient
+                                    </label>
+                                    <label class="btn btn-outline-primary font-weight-bold">
+                                        <input class="custom-control-input" asp-for="Input.IsDoctor" />Doctor
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-outline-primary font-weight-bold">Log in</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-3 col-lg-4"></div>
+            </div>
+        </div>
+    </div>
+        <hr />
+
+        @section Scripts {
+            <partial name="_ValidationScriptsPartial" />
+        }
+
